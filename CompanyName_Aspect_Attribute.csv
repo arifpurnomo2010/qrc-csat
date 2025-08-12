@@ -1,0 +1,144 @@
+Type,Category,Original_Name,Short_Name
+Company,Pesticide_Company,Syngenta,Syngenta
+Company,Pesticide_Company,Bayer CropScience,Bayer
+Company,Pesticide_Company,CORTEVA,CORTEVA
+Company,Pesticide_Company,Nufarm,Nufarm
+Company,Pesticide_Company,FMC,FMC
+Company,Pesticide_Company,BASF,BASF
+Company,Pesticide_Company,"ADIL MAKMUR FAJAR, PT",ADIL MAKMUR
+Company,Pesticide_Company,"ADVANSIA INDOTANI, PT",ADVANSIA 
+Company,Pesticide_Company,"AGRICON (AGRICULTURE CONSTRUCTION, PT)",AGRICON
+Company,Pesticide_Company,"AGRO JAYA INDUSTRI, PT",AGRO JAYA 
+Company,Pesticide_Company,"AGRO NATURAL TECHNOLOGY, PT",AGRO NATURAL 
+Company,Pesticide_Company,"AGRO SEJAHTERA INDONESIA, PT",AGRO SEJAHTERA 
+Company,Pesticide_Company,"AGROMANNA JAYA LESTARI, PT",AGROMANNA 
+Company,Pesticide_Company,"AGX ASIA INDONESIA, PT",AGX ASIA
+Company,Pesticide_Company,"ARTHA MAKMUR ABADI, PT",ARTHA MAKMUR
+Company,Pesticide_Company,"ARYSTA LIFESCIENCE TIRTA, PT",ARYSTA 
+Company,Pesticide_Company,"ASIANA CHEMICALINDO LESTARI, PT",ASIANA 
+Company,Pesticide_Company,"BEHN MEYER AGRICARE, PT",BEHN MEYER 
+Company,Pesticide_Company,"BELIRANG KALISARI, PT",BELIRANG 
+Company,Pesticide_Company,"BENIH BERKAH BERSERI, PT",BENIH BERKAH 
+Company,Pesticide_Company,"BIO AGRITECH NUSANTARA, PT",BIO AGRITECH 
+Company,Pesticide_Company,"BIOTIS AGRINDO, PT",BIOTIS 
+Company,Pesticide_Company,"DA MING INDONESIA, PT",DA MING
+Company,Pesticide_Company,"DANKEN INDONESIA, PT",DANKEN 
+Company,Pesticide_Company,"DELTA GIRI WACANA (DGW), PT",DELTA GIRI 
+Company,Pesticide_Company,"DELTAGRO MULIA SEJATI, PT",DELTAGRO 
+Company,Pesticide_Company,"ETONG CHEMICAL INDONESIA, PT",ETONG CHEMICAL 
+Company,Pesticide_Company,"EXCEL MEG INDO, PT",EXCEL MEG 
+Company,Pesticide_Company,Exindo Rahardja Pratama,Exindo 
+Company,Pesticide_Company,"FADJARPURNAMA PRATAMA INTI, PT",FADJARPURNAMA
+Company,Pesticide_Company,"FAJAR NASIONAL CIPTA, PT",FAJAR NASIONAL
+Company,Pesticide_Company,"FORAGRO MITRA SEJATI, PT",FORAGRO 
+Company,Pesticide_Company,"GLOBAL AGROTECH, PT",GLOBAL AGROTECH
+Company,Pesticide_Company,"HARINA CHEMICALS INDUSTRY, PT",HARINA 
+Company,Pesticide_Company,"INDAGRO, PT",INDAGRO
+Company,Pesticide_Company,"INDOIN BUSINESS GROUP, PT",INDOIN 
+Company,Pesticide_Company,"INDO-SINO AGROCHEMICAL, PT",INDO-SINO 
+Company,Pesticide_Company,"KENSO INDONESIA, PT",KENSO
+Company,Pesticide_Company,"Kristalindo Karunia Internasional, PT",Kristalindo 
+Company,Pesticide_Company,"MAJU MAKMUR UTOMO, PT",MAJU MAKMUR 
+Company,Pesticide_Company,"MAXXI AGRI INDONESIA, PT",MAXXI AGRI
+Company,Pesticide_Company,"MULTI SARANA INDOTANI, PT",MULTI SARANA
+Company,Pesticide_Company,"NATHANI CHEMICALS, PT",NATHANI 
+Company,Pesticide_Company,"NUSA MANDIRI UTAMA, PT",NUSA MANDIRI
+Company,Pesticide_Company,"PERUSAHAAN PERDAGANGAN INDONESIA, PT",PERUSAHAAN PERDAGANGAN
+Company,Pesticide_Company,"PETROKIMIA KAYAKU, PT",PETROKIMIA KAYAKU
+Company,Pesticide_Company,"PETROSIDA GRESIK, PT",PETROSIDA 
+Company,Pesticide_Company,"Prima Karya Berjaya, PT",Prima Karya 
+Company,Pesticide_Company,"RABANA AGRO RESOURCES, PT",RABANA AGRO 
+Company,Pesticide_Company,"RAINBOW AGROSCIENCES, PT",RAINBOW 
+Company,Pesticide_Company,"ROLIMEX KIMIA NUSAMAS, PT",ROLIMEX 
+Company,Pesticide_Company,"SANTANI AGRO MANDIRI, PT",SANTANI AGRO MANDIRI
+Company,Pesticide_Company,"SANTANI AGRO PERKASA, PT",SANTANI AGRO PERKASA
+Company,Pesticide_Company,"SARAREA PANEN RAYA, CV",SARAREA 
+Company,Pesticide_Company,"SINAR GENERAL INDUSTRIES, PT",SINAR GENERAL
+Company,Pesticide_Company,"TIGA MUARA EMAS MAKMUR, PT",TIGA MUARA 
+Company,Pesticide_Company,"TRIDA KIMIA SAKTI, PT",TRIDA KIMIA
+Company,Pesticide_Company,"TRITAMA WIRAKARSA, PT",TRITAMA 
+Company,Pesticide_Company,Lokal,Lokal
+Company,Pesticide_Company,NA,NA
+Company,Digital_App,Bayer (Bayer Rewards+ (BRP),Bayer Rewards+ 
+Company,Digital_App,Syngenta (Epartner Growth (PartnerGrow),Syngenta PartnerGrow
+Company,Digital_App,Corteva (Corteva Club Premier - Crop),Corteva Club Premier - Crop
+Company,Digital_App,BASF (BASF Kios Sejahtera),BASF Kios Sejahtera
+Company,Digital_App,Nufarm (Nufarm Grow Together),Nufarm Grow Together
+Company,Digital_App,FMC (FMC Freedom Pass),FMC Freedom Pass
+Company,Digital_App,Other 7,Other 7
+Company,Digital_App,Other 8,Other 8
+Company,Digital_App,Other 9,Other 9
+Company,Digital_App,Other 10,Other 10
+Company,Digital_App,Other 11,Other 11
+Company,Digital_App,Other 12,Other 12
+Aspect,Pesticide_Company,H1,Commercial Policy
+Attribute,Pesticide_Company,A1.1, Attractive Margins 
+Attribute,Pesticide_Company,A1.2, Credit Limit 
+Attribute,Pesticide_Company,A1.3, Flexible Payment 
+Attribute,Pesticide_Company,A1.4, Installment Payment 
+Aspect,Pesticide_Company,H2,Sales Support
+Attribute,Pesticide_Company,A2.1, Field Campaigns 
+Attribute,Pesticide_Company,A2.2, Retailer Ads 
+Attribute,Pesticide_Company,A2.3, Farmer Rewards 
+Attribute,Pesticide_Company,A2.4, Plot Demos 
+Attribute,Pesticide_Company,A2.5, High Demand 
+Aspect,Pesticide_Company,H3, Order Delivery
+Attribute,Pesticide_Company,A3.1, Product Availability
+Attribute,Pesticide_Company,A3.2, Easy Ordering 
+Attribute,Pesticide_Company,A3.3, Order Accuracy 
+Attribute,Pesticide_Company,A3.4, Emergency Response
+Attribute,Pesticide_Company,A3.5, Goods Quality 
+Attribute,Pesticide_Company,A3.6, Delivery Speed 
+Aspect,Pesticide_Company,H4, Company Image 
+Attribute,Pesticide_Company,A4.1, Trustworthy 
+Attribute,Pesticide_Company,A4.2, Farmer Focus 
+Aspect,Pesticide_Company,H5, Product Portfolio 
+Attribute,Pesticide_Company,A5.1, Product Variety 
+Attribute,Pesticide_Company,A5.2, Product Efficacy 
+Attribute,Pesticide_Company,A5.3, New Products 
+Attribute,Pesticide_Company,A5.4, Packaging Quality
+Aspect,Pesticide_Company,H6,Complaint Handling
+Attribute,Pesticide_Company,A6.1, Efficacy Complaint 
+Attribute,Pesticide_Company,A6.2, Fair Returns 
+Attribute,Pesticide_Company,A6.3, Packaging Complaint 
+Aspect,Pesticide_Company,H7, Sales Program 
+Attribute,Pesticide_Company,A7.1, Easy Schemes 
+Attribute,Pesticide_Company,A7.2, Fast Settlement 
+Attribute,Pesticide_Company,A7.3, Reward Points 
+Attribute,Pesticide_Company,A7.4, Attractive Promos 
+Aspect,Pesticide_Company,H8, Sales Staff 
+Attribute,Pesticide_Company,A8.1, Easy Communication
+Attribute,Pesticide_Company,A8.2, Tech Knowledge 
+Attribute,Pesticide_Company,A8.3, Solution Recommendation
+Attribute,Pesticide_Company,A8.4, Visit Frequency 
+Attribute,Pesticide_Company,A8.5, Professional 
+Aspect,Digital_App,H9, Digital App 
+Attribute,Digital_App,A9.1, Easy Register 
+Attribute,Digital_App,A9.2, User Friendly 
+Attribute,Digital_App,A9.3, Low Requirement 
+Attribute,Digital_App,A9.4, Real Time Points 
+Attribute,Digital_App,A9.5, Data Security 
+Attribute,Digital_App,A9.6, Transaction History 
+Attribute,Digital_App,A9.7, Auto Integration 
+Attribute,Digital_App,A9.8, Live Support 
+Attribute,Digital_App,A9.9, Reward Choice 
+Attribute,Digital_App,A9.10, Farmer Diagnosis 
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+S4,,,ShortName

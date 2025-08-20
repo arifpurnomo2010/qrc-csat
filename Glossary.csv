@@ -1,0 +1,79 @@
+Type,Question Code,Attribute Original Name,Short Name
+Aspect,H1, Commercial Policy,Commercial Policy
+Attribute,A1.1, Attractive sales margins , Attractive Margins 
+Attribute,A1.2, Annual credit limit amount , Credit Limit 
+Attribute,A1.3, Flexible Payment Terms , Flexible Payment 
+Attribute,A1.4, Payments can be spread out in installments over a designated period , Installment Payment 
+,,,
+Aspect,H2, Sales Support,Sales Support
+Attribute,A2.1," Frequency of field marketing campaigns (retailer visits, one-day promos, farmer meetings, field schools/farmer training, etc.) ", Field Campaigns 
+Attribute,A2.2," Advertising support for retailers (banners, posters, store signs, product displays, etc.) ", Retailer Ads 
+Attribute,A2.3," Loyalty or reward programs for farmers (gatherings, travel, rafting, direct prizes, etc.) ", Farmer Rewards 
+Attribute,A2.4, Frequency of plot demonstrations , Plot Demos 
+Attribute,A2.5, High farmer demand for products leading to fast sales , High Demand 
+,,,
+Aspect,H3, Ordering & Delivery Process , Order Delivery
+Attribute,A3.1, Product availability , Product Availability
+Attribute,A3.2, Ease of placing orders , Easy Ordering 
+Attribute,A3.3, Accuracy between ordered and delivered products , Order Accuracy 
+Attribute,A3.4, Responsive and quick handling of emergency orders , Emergency Response
+Attribute,A3.5, Quality and condition of goods upon store receipt , Goods Quality 
+Attribute,A3.6, Speed from order placement to delivery , Delivery Speed 
+,,,
+Aspect,H4, Company Image (Brand Reputation), Company Image 
+Attribute,A4.1, Trustworthy company , Trustworthy 
+Attribute,A4.2, Company that considers farmers as customers and business partners , Farmer Focus 
+,,,
+Aspect,H5, Product Portfolio, Product Portfolio 
+Attribute,A5.1, Providing various product types suitable for farmer needs , Product Variety 
+Attribute,A5.2, Product effectiveness/efficacy level , Product Efficacy 
+Attribute,A5.3, Frequency of new product launches , New Products 
+Attribute,A5.4, Clear packaging information and good packaging quality , Packaging Quality
+,,,
+Aspect,H6, Complaint Handling,Complaint Handling
+Attribute,A6.1, Handling complaints related to product effectiveness/efficacy , Efficacy Complaint 
+Attribute,A6.2," Quick, transparent, and fair response to complaints or product returns (e.g., damaged products, wrong shipments, insufficient stock, or return processes that don't disadvantage stores) ", Fair Returns 
+Attribute,A6.3, Handling complaints related to product packaging , Packaging Complaint 
+Aspect,H7, Sales Program Scheme, Sales Program 
+Attribute,A7.1, Ease of understanding sales program schemes , Easy Schemes 
+Attribute,A7.2," Speed in completing settlement processes (e.g., incentive claims, rebates, cashbacks, product bonuses, etc.) ", Fast Settlement 
+Attribute,A7.3, Providing reward points for loyalty programs , Reward Points 
+Attribute,A7.4," Having attractive, competitive, flexible, and transparent promotional/loyalty programs (e.g., annual sales bonuses, cashbacks, direct discounts, etc.) ", Attractive Promos 
+,,,
+Aspect,H8, Company Staff/Sales Personnel, Sales Staff 
+Attribute,A8.1, Ease of communication with company staff/sales personnel , Easy Communication
+Attribute,A8.2, Technical knowledge of company staff/sales personnel , Tech Knowledge 
+Attribute,A8.3, Ability of company staff/sales personnel to recommend solutions for farmers , Solution Recommendation
+Attribute,A8.4, Frequency of visits from company staff/sales personnel to retailers and farmers , Visit Frequency 
+Attribute,A8.5," Professionalism of company staff/sales personnel treating all stores fairly, transparently, and consistently ", Professional 
+,,,
+Aspect,H9,H9, Digital App 
+Attribute,A9.1, Ease of initial digital application registration process , Easy Register 
+Attribute,A9.2," Application easy to use for technology novices (simple interface, clear navigation) ", User Friendly 
+Attribute,A9.3, Does not require fast internet connection or expensive devices , Low Requirement 
+Attribute,A9.4," Application has features where users can easily track their loyalty points in real time (view earned points, redemption history, check point balance) ", Real Time Points 
+Attribute,A9.5, Data security that protects accounts and prevents fraud/data breaches , Data Security 
+Attribute,A9.6, Available history of point transactions and redeemed rewards , Transaction History 
+Attribute,A9.7," Application automatically integrated with distributor system so points are directly credited during transactions, where retailers don't need manual input/barcode scanning ", Auto Integration 
+Attribute,A9.8," Available WhatsApp number, hotline, or live chat feature in the application ", Live Support 
+Attribute,A9.9, Stores can choose their preferred reward types in the application , Reward Choice 
+Attribute,A9.10, Providing specialized application for farmers regarding free pest and disease diagnosis , Farmer Diagnosis 
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+S4,,,ShortName

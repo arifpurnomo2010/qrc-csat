@@ -1,8 +1,9 @@
 pandas
 numpy
+openpyxl
 plotly
 dash
 dash-bootstrap-components
 scikit-learn
-openpyxl
-gunicorn
+gunicorn 
+flask_caching

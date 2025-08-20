@@ -1,9 +1,7 @@
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
+# Abaikan direktori cache
+cache-directory/
+
+# Abaikan file environment virtual Python (jika ada)
 venv/
-.git
-.idea/
+*.pyc
+__pycache__/

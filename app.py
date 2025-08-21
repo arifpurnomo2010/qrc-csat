@@ -249,6 +249,26 @@ def create_filter_info(segments, regions, provinces):
 
     return filename_suffix, info_df
 
+def create_filter_subtitle(df, segments, regions, provinces):
+    """Creates a subtitle string for charts based on active filters and sample size."""
+    if df.empty:
+        return ""
+
+    n_base = df['SbjNum'].nunique()
+    filter_parts = []
+    if segments:
+        filter_parts.append(f"Segment: {', '.join(segments)}")
+    if regions:
+        filter_parts.append(f"Region: {', '.join(regions)}")
+    if provinces:
+        filter_parts.append(f"Province: {', '.join(provinces)}")
+
+    if not filter_parts:
+        return f""
+
+    subtitle = f"Filtered by: {'; '.join(filter_parts)}"
+    return subtitle
+
 # --- Dash App Layout ---
 navbar = dbc.Navbar(
     dbc.Container(
@@ -650,6 +670,10 @@ def update_snake_charts(contents, filename, mode, selected_entities, segments, r
     df = filter_dataframe(json_data[mode], segments, regions, provinces)
     if df.empty: return []
     df['Display_Name'] = df['Company_Short_Name'].fillna(df['Original_Name'])
+    
+    # Create the subtitle based on the overall filtered data for this tab
+    subtitle_text = create_filter_subtitle(df, segments, regions, provinces)
+    
     charts = []
     aspect_names = sorted(df['Aspect_Short_Name'].unique())
     for aspect in aspect_names:
@@ -666,8 +690,11 @@ def update_snake_charts(contents, filename, mode, selected_entities, segments, r
             attr_perf_data.append(avg_scores)
         chart_df = pd.concat(attr_perf_data) if attr_perf_data else pd.DataFrame()
         if not chart_df.empty:
+            main_title = f'Attribute Performance for: {aspect}'
+            full_title = f'<b>{main_title}</b><br><sup>{subtitle_text}</sup>'
+
             fig = px.line(chart_df, x='Attribute_Short_Name', y='Satisfaction_Score', color='Entity',
-                          title=f'Attribute Performance for: {aspect}',
+                          title=full_title,
                           labels={'Satisfaction_Score': 'Avg. Score', 'Attribute_Short_Name': 'Attribute (ordered by Stated Importance)'},
                           markers=True, category_orders={'Attribute_Short_Name': attr_order})
             fig.update_layout(yaxis_range=[1,10], legend_title_text='Entity')
@@ -724,7 +751,9 @@ def update_quadrant_maps(contents, filename, mode, map_type, selected_entity, se
         for aspect in aspect_names:
             aspect_df_filtered = df[df['Aspect_Short_Name'] == aspect] if aspect != "Overall" else df
             
-            # Use the cached function
+            # Create subtitle for the specific data subset for this chart
+            subtitle_text = create_filter_subtitle(aspect_df_filtered, segments, regions, provinces)
+            
             derived_importance_df = calculate_derived_importance(df_json, mode, aspect_name=aspect if aspect != "Overall" else None)
             
             if derived_importance_df.empty:
@@ -736,8 +765,11 @@ def update_quadrant_maps(contents, filename, mode, map_type, selected_entity, se
             stated_importance_df.rename(columns={'Attribute_Short_Name': 'feature', 'Importance_Score': 'Stated_Importance'}, inplace=True)
             quadrant_df = pd.merge(stated_importance_df, derived_importance_df, on='feature')
             if quadrant_df.empty: continue
+            
+            main_title = f'Key Driver Analysis for: {aspect}'
+            title = f'<b>{main_title}</b><br><sup>{subtitle_text}</sup>'
+
             x_col, y_col = 'Derived_Importance', 'Stated_Importance'
-            title = f'Key Driver Analysis for: {aspect}'
             padding = 0.5
             min_x, max_x = quadrant_df[x_col].min() - padding, quadrant_df[x_col].max() + padding
             min_y, max_y = quadrant_df[y_col].min() - padding, quadrant_df[y_col].max() + padding
@@ -769,7 +801,8 @@ def update_quadrant_maps(contents, filename, mode, map_type, selected_entity, se
         if not selected_entity:
             return html.Div("Please select an entity to generate the performance map.")
         
-        # Use the cached function
+        subtitle_text = create_filter_subtitle(df, segments, regions, provinces)
+        
         derived_importance_df = calculate_derived_importance(df_json, mode, aspect_name=None)
         
         if derived_importance_df.empty:
@@ -793,8 +826,11 @@ def update_quadrant_maps(contents, filename, mode, map_type, selected_entity, se
         quadrant_df.dropna(inplace=True)
         if quadrant_df.empty:
             return html.P("Not enough data to plot the performance map.")
+        
+        main_title = f'Importance - Performance Analysis for: {selected_entity}'
+        title = f'<b>{main_title}</b><br><sup>{subtitle_text}</sup>'
+
         x_col, y_col = 'Performance', 'Derived_Importance'
-        title = f'Importance - Performance Analysis for: {selected_entity}'
         if selected_entity != 'Total Market':
             abs_max = quadrant_df[x_col].abs().max() * 1.1
             min_x, max_x = -abs_max, abs_max

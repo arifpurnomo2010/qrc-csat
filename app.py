@@ -89,7 +89,14 @@ def process_data(contents, filename):
     d2_cols_rename = {col: col.replace('T_D2_', 'T_H9_') for col in df.columns if col.startswith('T_D2_')}
     df_renamed = df.rename(columns=d2_cols_rename)
     # Process Company data (H1-H8)
-    h1_h8_cols = [col for col in df_renamed.columns if col.startswith('T_H') and not col.startswith('T_H9_')]
+    h1_h8_cols = [
+        col for col in df_renamed.columns
+        if (
+            col.startswith('T_H') and
+            not col.startswith('T_H9_') and
+            not (col.startswith('T_H1_') and col.endswith('_2'))
+        )
+    ]
     df_h1_h8_long = df_renamed.melt(
         id_vars=['SbjNum', 'Segmen', 'Region', 'Provinsi'], value_vars=h1_h8_cols,
         var_name='Question_Code', value_name='Satisfaction_Score'

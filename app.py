@@ -22,6 +22,7 @@ from flask_caching import Cache
 # Machine Learning components for Derived Importance
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.inspection import permutation_importance # <-- TAMBAHKAN
 
 # Suppress warnings for cleaner output
 warnings.filterwarnings('ignore')
@@ -198,11 +199,12 @@ def filter_dataframe(df_json, segments, regions, provinces):
 @cache.memoize()
 def calculate_derived_importance(df_json, mode, aspect_name=None):
     """
-    Calculates Derived Importance using a RandomForest model.
+    Calculates Derived Importance using Permutation Importance with a RandomForest model.
     This function is cached. The key is based on the filtered data, mode, and aspect.
     """
-    print(f"--- Running calculate_derived_importance for mode '{mode}' and aspect '{aspect_name}' (not from cache) ---")
+    print(f"--- Running calculate_derived_importance with PERMUTATION method for mode '{mode}' and aspect '{aspect_name}' (not from cache) ---")
     df = pd.read_json(io.StringIO(df_json), orient='split')
+
     if mode == 'company':
         dv = 'Overall_CSAT'
         pivot_level = 'Attribute_Short_Name'
@@ -211,21 +213,48 @@ def calculate_derived_importance(df_json, mode, aspect_name=None):
         dv = 'Overall_CSAT_App'
         df_model = df.copy()
         pivot_level = 'Attribute_Short_Name'
+
     if df_model.empty or dv not in df_model.columns: return pd.DataFrame()
+
     df_wide = df_model.pivot_table(index=['SbjNum', 'Original_Name'], columns=pivot_level, values='Satisfaction_Score', aggfunc='mean')
     overall_scores = df.drop_duplicates(subset=['SbjNum', 'Original_Name'])
     overall_scores = overall_scores.set_index(['SbjNum', 'Original_Name'])[[dv]]
     df_wide = df_wide.join(overall_scores, on=['SbjNum', 'Original_Name'])
+
     iv_cols = df_wide.columns.drop(dv, errors='ignore')
-    df_wide.dropna(subset=[dv] + iv_cols.tolist(), inplace=True)
+
+    # Imputasi untuk menangani data yang hilang setelah pivot
+    if not df_wide.empty:
+        df_wide[iv_cols] = df_wide[iv_cols].fillna(df_wide[iv_cols].mean())
+
+    df_wide.dropna(subset=[dv], inplace=True) # Hanya drop jika targetnya NaN
+
     if df_wide.empty or len(df_wide) < 10: return pd.DataFrame()
+
     X = df_wide[iv_cols]
     y = df_wide[dv]
+
     model = RandomForestRegressor(n_estimators=100, random_state=42, n_jobs=-1)
     model.fit(X, y)
-    importance_df = pd.DataFrame({'feature': X.columns, 'importance': model.feature_importances_})
+
+    # --- INTI PERUBAHAN: MENGGUNAKAN PERMUTATION IMPORTANCE ---
+    result = permutation_importance(
+        model, X, y,
+        n_repeats=10,       # Ulangi 10 kali per fitur untuk hasil yang stabil
+        random_state=42,
+        n_jobs=-1
+    )
+    # --- AKHIR DARI INTI PERUBAHAN ---
+
+    importance_df = pd.DataFrame({'feature': X.columns, 'importance': result.importances_mean})
+
+    # Skor permutasi bisa negatif jika fitur justru memperburuk model.
+    # Kita anggap skor negatif sebagai tidak penting (importance = 0).
+    importance_df['importance'] = importance_df['importance'].clip(lower=0)
+    
     scaler = MinMaxScaler(feature_range=(1, 10))
     importance_df['Derived_Importance'] = scaler.fit_transform(importance_df[['importance']])
+
     return importance_df[['feature', 'Derived_Importance']]
 
 # Helper function to create filename and info sheet
